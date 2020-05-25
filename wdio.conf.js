@@ -53,6 +53,25 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            // binary: "./drivers/chromedriver_mac64",
+            args: [
+                'headless'
+                ,'port=4444'
+                ,'no-sandbox'
+                ,'disable-gpu'
+                ,'disable-logging'
+                ,'disable-plugins'
+                ,'disable-extensions'
+                ,'disable-dev-shm-usage'
+                ,'homedir=/tmp/chrome'
+                ,'disk-cache-dir=/tmp/chrome/cache-dir'
+                ,'remote-debugging-port=9222'
+                ,'window-size=1680,2400'
+                ,'verbose'
+                ,'log-path=./drivers/chromedriver.log'
+            ],
+        },
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
